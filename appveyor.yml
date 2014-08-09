@@ -1,0 +1,26 @@
+version: "{build}"
+
+assembly_info:
+  patch: false
+
+platform:
+  - AnyCPU
+
+configuration:
+  - Release
+
+verbosity: minimal
+
+before_build:
+  - cmd: nuget restore
+
+artifacts:
+  - path: Zoltu.MediaFormatter.Json/bin/**/*.nupkg
+  - path: Zoltu.MediaFormatter.Json/bin/**/*.dll
+  - path: Zoltu.MediaFormatter.Json/bin/**/*.pdb
+
+deploy:
+  provider: NuGet
+  api_key:
+    secure: X6YnwwH05dy0122NypnAz4w1ti39JQ49I8bQqDsLHzUwAp1rhvm6yvPo03EpwD8e
+
