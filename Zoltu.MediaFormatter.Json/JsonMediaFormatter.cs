@@ -9,7 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace StayUpdated.MonitorAdapter.Formatters
+namespace Zoltu.MediaFormatter.Json
 {
 	public class JsonMediaFormatter : MediaTypeFormatter
 	{

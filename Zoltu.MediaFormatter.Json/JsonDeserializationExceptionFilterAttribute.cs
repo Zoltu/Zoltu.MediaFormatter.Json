@@ -3,9 +3,9 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http.Filters;
 
-namespace StayUpdated.MonitorAdapter.Filters
+namespace Zoltu.MediaFormatter.Json
 {
-	public sealed class DeserializationExceptionFilterAttribute : ExceptionFilterAttribute
+	public sealed class JsonDeserializationExceptionFilterAttribute : ExceptionFilterAttribute
 	{
 		public override void OnException(HttpActionExecutedContext actionExecutedContext)
 		{
