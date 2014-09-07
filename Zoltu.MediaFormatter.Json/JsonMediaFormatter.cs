@@ -51,7 +51,7 @@ namespace Zoltu.MediaFormatter.Json
 			if (readStream == null)
 				throw new ArgumentNullException("readStream");
 
-			return Task.Factory.StartNew(() => Deserialize(readStream, type));
+			return Task.FromResult(Deserialize(readStream, type));
 		}
 
 		public override Task WriteToStreamAsync(Type type, Object value, Stream writeStream, HttpContent content, TransportContext transportContext, CancellationToken cancellationToken)
@@ -61,7 +61,8 @@ namespace Zoltu.MediaFormatter.Json
 			if (writeStream == null)
 				throw new ArgumentNullException("writeStream");
 
-			return Task.Factory.StartNew(() => Serialize(writeStream, value));
+			Serialize(writeStream, value);
+			return Task.FromResult(0);
 		}
 
 		private Object Deserialize(Stream readStream, Type type)
