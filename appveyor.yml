@@ -1,3 +1,9 @@
+branches:
+  only:
+    - master
+
+skip_tags: true
+
 version: "{build}"
 
 assembly_info:
@@ -9,10 +15,13 @@ platform:
 configuration:
   - Release
 
-verbosity: minimal
-
 before_build:
   - cmd: nuget restore
+
+build:
+  project: Zoltu.MediaFormatter.Json.sln
+  publish_wap: true
+  verbosity: minimal
 
 artifacts:
   - path: Zoltu.MediaFormatter.Json/bin/**/*.nupkg
